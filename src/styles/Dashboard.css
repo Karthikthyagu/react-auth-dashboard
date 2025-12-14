@@ -1,0 +1,286 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, Arial, sans-serif;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  background: #f5f7fb;
+  overflow: hidden;
+}
+
+.dashboard-layout {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.sidebar {
+  width: 240px;
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.sidebar-logo img {
+  width: 42px;
+  height: 42px;
+}
+
+.nav-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  text-align: left;
+  cursor: pointer;
+  color: #111827;
+}
+
+.nav-btn.active {
+  background: #2563eb;
+  color: #ffffff;
+  margin-top: 40px;
+}
+
+.nav-btn.logout {
+  margin-top: auto;
+  color: #ef4444;
+  font-weight: 600;
+}
+
+.main-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.topbar {
+  height: 64px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 24px;
+  position: relative;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #111827;
+}
+
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #e0e7ff;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.content {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  color: #111827;
+}
+
+.content h1 {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 18px;
+  border: 1px solid #e5e7eb;
+}
+
+.stat-card.success {
+  background: #dcfce7;
+}
+
+.stat-card.info {
+  background: #e0e7ff;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 20px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.primary-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.add-task-btn {
+  width: auto;
+  white-space: nowrap;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+th {
+  text-align: left;
+  font-size: 13px;
+  color: #6b7280;
+  padding-bottom: 10px;
+}
+
+td {
+  padding: 14px 0;
+  border-top: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+.status {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.status.done {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.status.progress {
+  background: #e0e7ff;
+  color: #2563eb;
+}
+
+@media (max-width: 950px) {
+  .sidebar {
+    display: none;
+  }
+
+  .nav-btn.logout {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: auto;
+    padding: 6px 12px;
+    background: transparent;
+    font-size: 14px;
+    z-index: 999;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media (max-width: 600px) {
+  .content {
+    padding: 16px;
+  }
+
+  .content h1 {
+    font-size: 20px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .card-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .add-task-btn {
+    width: 100%;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    display: none;
+  }
+
+  .nav-btn.logout {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: auto;
+    padding: 6px 12px;
+    background: transparent;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #ef4444;
+    z-index: 1000;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-btn.logout {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+}
+
