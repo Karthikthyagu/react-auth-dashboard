@@ -1,16 +1,44 @@
-# React + Vite
+# React Auth Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive authentication-based dashboard built with React.js.
 
-Currently, two official plugins are available:
+## Features
+- User Login & Registration (client-side auth)
+- Protected Dashboard route
+- Responsive UI (Desktop, Tablet, Mobile)
+- Task overview dashboard
+- Logout flow
+- Clean and scalable folder structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- React.js
+- React Router
+- CSS (Responsive Design)
+- Vite
 
-## React Compiler
+## Project Structure
+src/
+├─ components/
+├─ pages/
+│ ├─ Login.jsx
+│ ├─ Register.jsx
+│ └─ Dashboard.jsx
+├─ styles/
+├─ assets/
+└─ main.jsx
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
 
-## Expanding the ESLint configuration
+## Authentication Flow
+- User logs in → token stored in localStorage
+- Protected dashboard route checks token
+- Logout clears storage and redirects to login
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Future Improvements
+- JWT authentication via backend
+- Role-based access control
+- API-driven task management
+- Database integration
+
+## Author
+Karthik Thyagu
+
