@@ -16,6 +16,10 @@ A modern, responsive authentication-based dashboard built with React.js.
 - CSS (Responsive Design)
 - Vite
 
+### How to run
+npm install  
+npm run dev  
+
 ## Project Structure
 src/
 ├─ components/
